@@ -1,6 +1,6 @@
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="AppController">
 <head>
-  <title>DebConf15 Schedule</title>
+  <title>{{ schedule.conference.title }} Schedule</title>
   <meta name="author" content="Daniel Maslowski" />
   <meta name="description" content="Mobile-friendly schedule for DebConf15" />
   <meta charset="UTF-8" />
@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="style.css" />
   <!-- endbuild -->
 </head>
-<body ng-controller="AppController">
+<body>
   <img src="https://summit.debconf.org/static/debconf_website/images/bg_logo_xp.png" />
   <div>
     <ul>

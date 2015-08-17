@@ -29,8 +29,9 @@ One installation is [hosted on DigitalOcean](http://bit.do/debconf15schedule).
 
 ## Development
 For development you can use the `grunt web_server` task. You will need the XML
-file from the official website. You can obtain a copy by running `grunt wget`.
-The open the local URL in your web browser: `http://localhost:8000/index.html`
+file from the official website. You can obtain a copy by running `grunt wget`
+and copying it from the `release/` folder into the project root directory.
+Then open the local URL in your web browser: `http://localhost:8000/index.html`
 
 ## Contribution
 Please feel free to participate in whatever way you like. :) Feedback is always
