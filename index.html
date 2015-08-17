@@ -12,6 +12,7 @@
 </head>
 <body>
   <img src="https://summit.debconf.org/static/debconf_website/images/bg_logo_xp.png" />
+
   <div>
     <ul>
       <li ng-repeat="day in schedule.day">
@@ -19,22 +20,21 @@
       </li>
     </ul>
   </div>
+
   <h1>All events listed</h1>
   <div ng-repeat="day in schedule.day">
     <h2 id="day{{ day._index }}">{{ day._date }}</h2>
     <div ng-repeat="room in day.room">
       <h3 ng-if="roomHasEvents(room)">{{ room._name }}</h3>
-
       <table ng-if="roomHasEvents(room)">
         <thead>
-
           <tr>
             <th>Title</th>
             <th>Time</th>
           </tr>
         </thead>
         <tbody>
-          <tr ng-repeat="event in room.event" ng-click="toggleVisible(event)">
+          <tr ng-repeat="event in getEvents(room.event)" ng-click="toggleVisible(event)">
             <td class="title">
               <span>{{ event.title }}</span>
               <div ng-show="isVisible(event)" class="description">

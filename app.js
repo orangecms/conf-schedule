@@ -47,7 +47,7 @@ angular
      * @return {Boolean}       True if there are entries for the given room
      */
     $scope.roomHasEvents = function (room) {
-      return room.hasOwnProperty("event") && room.event.length;
+      return room.hasOwnProperty("event");
     };
 
     /**
@@ -86,5 +86,22 @@ angular
         return [];
       }
     };
+
+    /**
+     * access helper for the list of events
+     *
+     * @param  {object} event  The event as from the converted XML
+     * @return {object}        Array of events
+     */
+    $scope.getEvents = function (event) {
+      if (event instanceof Array) {
+        return event;
+      } else if (event) {
+        return [ event ];
+      } else {
+        return [];
+      }
+    };
+
   })
 ;
