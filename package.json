@@ -1,0 +1,25 @@
+{
+  "name": "debconf-15",
+  "version": "1.0.0",
+  "description": "DebConf15 Schedule reformatted",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Maslowski",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-rev": "^0.1.0",
+    "grunt-usemin": "^3.0.0",
+    "grunt-web-server": "^1.2.3",
+    "grunt-wget": "^0.1.3"
+  }
+}

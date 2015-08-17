@@ -1,0 +1,21 @@
+{
+  "name": "debconf15",
+  "version": "0.0.0",
+  "authors": [
+    "Daniel Maslowski <info@orangecms.org>"
+  ],
+  "description": "DebConf15 schedule wrapper",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-x2js": "~0.2.0",
+    "angular-ui-router": "~0.2.15"
+  }
+}
