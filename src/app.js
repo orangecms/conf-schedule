@@ -6,7 +6,7 @@ angular
   .factory('DataSource', function ($http, x2js) {
     return {
       get: function (callback) {
-        $http.get("debconf15.xml", // no CORS on https://summit.debconf.org/debconf15.xml :/
+        $http.get("schedule.xml", // no CORS on most sites like https://summit.debconf.org/debconf15.xml :/
           {
             transformResponse: function (data) { return x2js.xml_str2json( data ); }
           }

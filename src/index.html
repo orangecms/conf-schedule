@@ -11,7 +11,7 @@
   <!-- endbuild -->
 </head>
 <body>
-  <img src="https://summit.debconf.org/static/debconf_website/images/bg_logo_xp.png" />
+  <img src="img/logo.png" />
 
   <div>
     <ul>
@@ -38,7 +38,7 @@
             <td class="title">
               <span>{{ event.title }}</span>
               <div ng-show="isVisible(event)" class="description">
-                <a href="https://summit.debconf.org{{ event.conf_url }}">open on website</a>
+                <a ng-if="event.conf_url" href="https://summit.debconf.org{{ event.conf_url }}">open on website</a>
                 <p>{{ event.description }}</p>
                 <ul ng-if="event.persons">
                   Speakers:

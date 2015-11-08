@@ -1,0 +1,27 @@
+{
+  "version": "0.0.1",
+  "name": "ORR2015 Schedule",
+  "description": "schedule for ORR2015",
+  "launch_path": "/release/index.html",
+  "icons": {
+    "16": "/img/icons/icon16x16.png",
+    "48": "/img/icons/icon48x48.png",
+    "60": "/img/icons/icon60x60.png",
+    "128": "/img/icons/icon128x128.png"
+  },
+  "developer": {
+    "name": "Daniel Maslowski",
+    "url": "http://orangecms.org"
+  },
+  "type": "privileged",
+  "permissions": {
+    "systemXHR": {
+      "description": "Required to load remote content"
+    }
+  },
+  "csp" : "default-src *; script-src 'self' 'unsafe-inline'; object-src 'self';",
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en"
+}

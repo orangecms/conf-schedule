@@ -19,18 +19,27 @@ module.exports = function(grunt) {
         files: [
           {
             'expand': true,
+            'flatten': true,
             'src': [
-              'index.html',
-              'app.js'
+              'src/index.html',
+              'src/app.js'
             ],
             'dest': 'release/'
+          },
+          {
+            'expand': true,
+            'flatten': true,
+            'src': [
+              'src/img/*'
+            ],
+            'dest': 'release/img/'
           }
         ]
       }
     },
 
     useminPrepare: {
-      html: 'index.html'
+      html: 'src/index.html'
     },
 
     usemin: {
@@ -45,9 +54,9 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'release/lib.js': [
-            'bower_components/x2js/xml2json.js',
-            'bower_components/angular/angular.js',
-            'bower_components/angular-x2js/dist/x2js.min.js'
+            'src/bower_components/x2js/xml2json.js',
+            'src/bower_components/angular/angular.js',
+            'src/bower_components/angular-x2js/dist/x2js.min.js'
           ]
         }
       }
@@ -60,15 +69,7 @@ module.exports = function(grunt) {
       },
       target: {
         files: {
-          'release/style.css': [ 'style.css' ]
-        }
-      }
-    },
-
-    wget: {
-      basic: {
-        files: {
-          'release/debconf15.xml': 'http://104.219.184.171/debconf15.xml'
+          'release/style.css': [ 'src/css/style.css' ]
         }
       }
     }
@@ -82,7 +83,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-usemin');
-  grunt.loadNpmTasks('grunt-wget');
 
   grunt.registerTask('default', [
     'clean',
@@ -90,7 +90,6 @@ module.exports = function(grunt) {
     'uglify',
     'cssmin',
     'usemin',
-    'wget'
   ]);
 
 };

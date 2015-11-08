@@ -1,6 +1,6 @@
-bower_components
 node_modules
+res
 release
 
 # we will have to download a fesh copy of the XML file
-debconf15.xml
+*.xml
