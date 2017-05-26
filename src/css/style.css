@@ -1,7 +1,7 @@
 body {
   font: 14pt sans-serif;
-  color: #fff;
-  background-color: #000;
+  color: #333;
+  background-color: #fff;
 }
 
 img {
@@ -9,14 +9,15 @@ img {
 }
 
 a {
-  color: #ffdd00;
+  color: #fff;
   text-decoration: none;
 }
 
 ul {
   padding: 0 .5em;
   list-style: none;
-  background-color: #444;
+  background-color: #ab1b93;
+  color: #fff;
 }
 
 li {
@@ -27,7 +28,7 @@ li {
 table {
   width: 100%;
   padding: 1em;
-  background-color: grey;
+  background-color: #fff;
 }
 
 tr {
@@ -40,18 +41,18 @@ td {
   margin: 0;
   padding: .5em;
   border: 0;
-  background-color: #191919;
+  background-color: #efefef;
 }
 td a {
-  color: #e21
+  color: #3479c4;
 }
 .time {
   width: 3em;
   text-align: center;
 }
 .title {
-  color: #fd0;
+  color: #3479c4;
 }
 .description {
-  color: #fff;
+  color: #333;
 }
