@@ -68,9 +68,13 @@ module.exports = function(grunt) {
         roundingPrecision: -1
       },
       target: {
-        files: {
-          'release/style.css': [ 'src/css/style.css' ]
-        }
+        files: [{
+          expand: true,
+          cwd: 'src/css',
+          src: [ 'style.css' ],
+          dest: 'release',
+          ext: '.css',
+        }]
       }
     }
   });
