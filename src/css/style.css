@@ -53,6 +53,9 @@ td a {
 .title {
   color: #3479c4;
 }
+.room {
+  width: 4em;
+}
 .description {
   color: #333;
 }

@@ -29,12 +29,17 @@
       <table><!-- ng-if="roomHasEvents(room)" -->
         <thead>
           <tr>
+            <th>Room</th>
+            <th>Start</th>
+            <th>End</th>
             <th>Title</th>
-            <th>Time</th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="event in day.events" ng-click="toggleVisible(event)">
+            <td class="room">{{ event.room }}</td>
+            <td class="time">{{ event.start }}</td>
+            <td class="time">{{ event.end }}</td>
             <td class="title">
               <span>{{ event.title }}</span>
               <div ng-show="isVisible(event)" class="description">
@@ -45,7 +50,6 @@
                   <li ng-repeat="name in getNames(event.persons.person)">{{ name }}</li>
               </div>
             </td>
-            <td class="time">{{ event.start }}</td>
           </tr>
         </tbody>
       </table>
@@ -56,6 +60,7 @@
   <script src="bower_components/x2js/xml2json.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-x2js/dist/x2js.min.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
   <!-- endbuild -->
   <script src="app.js"></script>
 
