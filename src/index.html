@@ -15,6 +15,17 @@
 
   <div>
     <ul>
+      <li>
+        <a href="#" ng-click="setByRooms()">Rooms</a>
+      </li>
+      <li>
+        <a href="#" ng-click="setChronological()">Chronological</a>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <ul>
       <li ng-repeat="day in schedule.day">
         <a href="#day{{ day._index }}">{{ day._date }}</a>
       </li>
@@ -22,9 +33,9 @@
   </div>
 
   <h1>All events listed</h1>
-  <div ng-repeat="day in schedule.day">
+  <div ng-switch="view" ng-repeat="day in schedule.day">
     <h2 id="day{{ day._index }}">{{ day._date }}</h2>
-    <div ng-repeat="room in day.room">
+    <div ng-switch-when="by-rooms" ng-repeat="room in day.room">
       <h3 ng-if="roomHasEvents(room)">{{ room._name }}</h3>
       <table ng-if="roomHasEvents(room)">
         <thead>
@@ -50,12 +61,40 @@
         </tbody>
       </table>
     </div>
+    <table ng-switch-default>
+      <thead>
+        <tr>
+          <th>Room</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="event in day.events" ng-click="toggleVisible(event)">
+          <td class="room">{{ event.room }}</td>
+          <td class="time">{{ event.start }}</td>
+          <td class="time">{{ event.end }}</td>
+          <td class="title">
+            <span>{{ event.title }}</span>
+            <div ng-show="isVisible(event)" class="description">
+              <a ng-if="event.conf_url" href="https://summit.debconf.org{{ event.conf_url }}">open on website</a>
+              <p>{{ event.description }}</p>
+              <ul ng-if="event.persons">
+                Speakers:
+                <li ng-repeat="name in getNames(event.persons.person)">{{ name }}</li>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- build:js lib.js -->
   <script src="bower_components/x2js/xml2json.js"></script>
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-x2js/dist/x2js.min.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
   <!-- endbuild -->
   <script src="app.js"></script>
 

@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "angular-x2js": "~0.2.0",
-    "angular-ui-router": "~0.2.15"
+    "angular-ui-router": "~0.2.15",
+    "moment": "^2.22.1"
   }
 }

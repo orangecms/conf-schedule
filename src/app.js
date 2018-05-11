@@ -21,12 +21,35 @@ angular
 angular
   .module('myApp', ['myApp.service'])
   .controller("AppController", function($scope, $interval, DataSource) {
+    // list events chronologically by default instead of sorting by room
+    $scope.view = "chronological";
+
     /**
      * callback fetching and setting the data
      *
      * @param  {object} data  The schedule data in JSON format
      */
     setData = function(data) {
+      data.schedule.day.map(day => {
+        const events = [];
+
+        day.room.forEach(room => {
+          $scope.getEvents(room.event).forEach(event => {
+            event.room = room._name;
+            const duration = moment.duration(event.duration);
+            const end = moment(event.start, "HH:mm").add(duration);
+            event.end = end.format("HH:mm");
+            events.push(event);
+          });
+        });
+
+        events.sort(function(a, b) {
+          return moment(a.start, "HH:mm").diff(moment(b.start, "HH:mm"), "minutes");
+        });
+
+        day.events = events;
+      });
+
       $scope.schedule = data.schedule;
     };
     // first fetch from the XML data source
@@ -49,6 +72,14 @@ angular
     $scope.roomHasEvents = function (room) {
       return room.hasOwnProperty("event");
     };
+
+    $scope.setByRooms = function () {
+      $scope.view = "by-rooms";
+    }
+
+    $scope.setChronological = function () {
+      $scope.view = "chronological";
+    }
 
     /**
      * state variable for showing / hiding event descriptions and speakers

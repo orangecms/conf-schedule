@@ -51,7 +51,8 @@ module.exports = function(grunt) {
           'release/lib.js': [
             'src/bower_components/x2js/xml2json.js',
             'src/bower_components/angular/angular.js',
-            'src/bower_components/angular-x2js/dist/x2js.min.js'
+            'src/bower_components/angular-x2js/dist/x2js.min.js',
+            'src/bower_components/moment/min/moment.min.js'
           ]
         }
       }
