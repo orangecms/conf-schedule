@@ -27,6 +27,20 @@ angular
      * @param  {object} data  The schedule data in JSON format
      */
     setData = function(data) {
+      //console.log(data.schedule);
+
+      data.schedule.day.map(day => {
+        const events = [];
+
+        day.room.forEach(room => {
+          $scope.getEvents(room.event).forEach(event => {
+            events.push(event);
+          });
+        });
+
+        day.events = events;
+      });
+
       $scope.schedule = data.schedule;
     };
     // first fetch from the XML data source
