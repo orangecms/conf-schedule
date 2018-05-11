@@ -2,16 +2,11 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    web_server: {
-      options: {
-        cors: true,
+    'http-server': {
+      'dev': {
         port: 8000,
-        nevercache: true,
-        logRequests: true
       },
-      foo: 'bar'
     },
-
     clean: [ 'release' ],
 
     copy: {
@@ -79,7 +74,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-web-server');
+  grunt.loadNpmTasks('grunt-http-server');
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
