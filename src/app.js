@@ -27,8 +27,6 @@ angular
      * @param  {object} data  The schedule data in JSON format
      */
     setData = function(data) {
-      //console.log(data.schedule);
-
       data.schedule.day.map(day => {
         const events = [];
 

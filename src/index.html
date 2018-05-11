@@ -24,36 +24,33 @@
   <h1>All events listed</h1>
   <div ng-repeat="day in schedule.day">
     <h2 id="day{{ day._index }}">{{ day._date }}</h2>
-    <!--div ng-repeat="room in day.room">
-      <h3 ng-if="roomHasEvents(room)">{{ room._name }}</h3-->
-      <table><!-- ng-if="roomHasEvents(room)" -->
-        <thead>
-          <tr>
-            <th>Room</th>
-            <th>Start</th>
-            <th>End</th>
-            <th>Title</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="event in day.events" ng-click="toggleVisible(event)">
-            <td class="room">{{ event.room }}</td>
-            <td class="time">{{ event.start }}</td>
-            <td class="time">{{ event.end }}</td>
-            <td class="title">
-              <span>{{ event.title }}</span>
-              <div ng-show="isVisible(event)" class="description">
-                <a ng-if="event.conf_url" href="https://summit.debconf.org{{ event.conf_url }}">open on website</a>
-                <p>{{ event.description }}</p>
-                <ul ng-if="event.persons">
-                  Speakers:
-                  <li ng-repeat="name in getNames(event.persons.person)">{{ name }}</li>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    <!--/div-->
+    <table>
+      <thead>
+        <tr>
+          <th>Room</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="event in day.events" ng-click="toggleVisible(event)">
+          <td class="room">{{ event.room }}</td>
+          <td class="time">{{ event.start }}</td>
+          <td class="time">{{ event.end }}</td>
+          <td class="title">
+            <span>{{ event.title }}</span>
+            <div ng-show="isVisible(event)" class="description">
+              <a ng-if="event.conf_url" href="https://summit.debconf.org{{ event.conf_url }}">open on website</a>
+              <p>{{ event.description }}</p>
+              <ul ng-if="event.persons">
+                Speakers:
+                <li ng-repeat="name in getNames(event.persons.person)">{{ name }}</li>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- build:js lib.js -->
