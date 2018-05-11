@@ -21,8 +21,12 @@ ul {
 }
 
 li {
-  margin: .5em;
+  padding: .5em;
   display: inline-block;
+}
+
+li.selected {
+  background-color: #751264;
 }
 
 table {
