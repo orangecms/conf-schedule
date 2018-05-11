@@ -17,8 +17,7 @@ module.exports = function(grunt) {
             'flatten': true,
             'src': [
               'src/index.html',
-              'src/app.js',
-              'src/schedule.xml'
+              'src/app.js'
             ],
             'dest': 'release/'
           },
