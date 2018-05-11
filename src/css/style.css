@@ -21,8 +21,12 @@ ul {
 }
 
 li {
-  margin: .5em;
+  padding: .5em;
   display: inline-block;
+}
+
+li.selected {
+  background-color: #751264;
 }
 
 table {
@@ -52,6 +56,9 @@ td a {
 }
 .title {
   color: #3479c4;
+}
+.room {
+  width: 4em;
 }
 .description {
   color: #333;
