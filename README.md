@@ -20,7 +20,8 @@ The app is built with the AngularJS framework and the X2JS library.
 You will need a global installation of Node.js, npm, Bower, and Grunt.
 
 ## Preparation
-To work with the app, please run `bower install` and `npm install` first.
+To work with the app, please run `bower install` in the `src/` subfolder and
+`npm install` first.
 
 ## Building and deploying the app
 Simply run `grunt` and you will get a release in the `release/` subfolder.
